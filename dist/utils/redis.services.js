@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userSessionJwtIdKey = exports.userSessionJwtIdPrefixKey = exports.attemptsBlockCountKey = exports.attemptsBlockKey = exports.attemptsKey = exports.resendOtpKey = exports.confirmEmailKey = exports.userPrefixKey = void 0;
+const userPrefixKey = (userId) => `users:${userId}:otp`;
+exports.userPrefixKey = userPrefixKey;
+const confirmEmailKey = (userId) => `${(0, exports.userPrefixKey)(userId)}:confirmEmail`;
+exports.confirmEmailKey = confirmEmailKey;
+const resendOtpKey = (userId) => `${(0, exports.userPrefixKey)(userId)}:resend`;
+exports.resendOtpKey = resendOtpKey;
+const attemptsKey = (userId) => `${(0, exports.userPrefixKey)(userId)}:attempts`;
+exports.attemptsKey = attemptsKey;
+const attemptsBlockKey = (userId) => `${(0, exports.userPrefixKey)(userId)}:block`;
+exports.attemptsBlockKey = attemptsBlockKey;
+const attemptsBlockCountKey = (userId) => `${(0, exports.userPrefixKey)(userId)}:blockCount`;
+exports.attemptsBlockCountKey = attemptsBlockCountKey;
+const userSessionJwtIdPrefixKey = (userId) => { return `users:${userId}:session`; };
+exports.userSessionJwtIdPrefixKey = userSessionJwtIdPrefixKey;
+const userSessionJwtIdKey = (userId, jwtId) => { return `${(0, exports.userSessionJwtIdPrefixKey)(userId)}:${jwtId}`; };
+exports.userSessionJwtIdKey = userSessionJwtIdKey;
+//# sourceMappingURL=redis.services.js.map
