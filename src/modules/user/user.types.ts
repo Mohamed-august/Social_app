@@ -1,3 +1,5 @@
+import { HydratedDocument } from "mongoose"
+
 export enum GenderEnum {
     male,
     female
@@ -32,3 +34,6 @@ export interface IUser {
     fullname:string
     //otp:otpSchema
 }
+
+export type HUser =HydratedDocument<IUser>
+

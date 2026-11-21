@@ -18,6 +18,8 @@ export const signupSchema={
     })
 }
 
+export type signupData=z.infer<typeof signupSchema.body>
+
 
 export const resetPasswordSchema={
     body:z.strictObject({
@@ -31,6 +33,13 @@ export const resetPasswordSchema={
     })
 }
 
+export type resetPasswordData=z.infer<typeof resetPasswordSchema.body>
 
-export type signupData=z.infer<typeof signupSchema.body>
+export const loginSchema={
+    body: z.strictObject({
+    password:z.string(),
+    identifier:z.string()
+})
+}
 
+export type loginData=z.infer<typeof loginSchema.body>

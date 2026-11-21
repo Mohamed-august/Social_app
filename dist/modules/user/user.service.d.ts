@@ -1,8 +1,7 @@
-import type { signupData } from "./user.validation";
-import { UserRepo } from "../../db/repo/user.repo";
+import type { loginData, signupData } from "./user.validation";
 declare class UserService {
     name: string;
-    userRepo: UserRepo;
+    private userRepo;
     constructor();
     signupService(data: signupData): Promise<{
         data: import("mongoose").Document<unknown, {}, import("./user.types").IUser, {
@@ -14,6 +13,12 @@ declare class UserService {
         }, "id"> & import("mongoose").HydratedDocumentOverrides<{
             id: string;
         }>;
+    }>;
+    loginService({ identifier, password }: loginData): Promise<{
+        data: {
+            accessToken: string;
+            refreshToken: string;
+        };
     }>;
 }
 export declare const userServices: UserService;

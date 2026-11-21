@@ -14,8 +14,14 @@ export class NotFoundException extends AppError{
     }
 }
 
-export class BadrequestResponse extends AppError{
+export class BadrequestException extends AppError{
     constructor(msg:string="bad request"){
-        super("bas request",400)
+        super("bad request",400)
+    }
+}
+
+export class UnAuthorizedException extends AppError{
+    constructor(msg:string="unAuthorized"){
+        super("unAuthorized",401)
     }
 }

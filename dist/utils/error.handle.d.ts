@@ -8,7 +8,10 @@ export declare class AppError extends Error {
 export declare class NotFoundException extends AppError {
     constructor(msg?: string);
 }
-export declare class BadrequestResponse extends AppError {
+export declare class BadrequestException extends AppError {
+    constructor(msg?: string);
+}
+export declare class UnAuthorizedException extends AppError {
     constructor(msg?: string);
 }
 //# sourceMappingURL=error.handle.d.ts.map

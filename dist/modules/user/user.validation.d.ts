@@ -13,6 +13,7 @@ export declare const signupSchema: {
         confirmPassword: z.ZodString;
     }, z.core.$strict>;
 };
+export type signupData = z.infer<typeof signupSchema.body>;
 export declare const resetPasswordSchema: {
     body: z.ZodObject<{
         email: z.ZodEmail;
@@ -21,5 +22,12 @@ export declare const resetPasswordSchema: {
         confirmPassword: z.ZodString;
     }, z.core.$strict>;
 };
-export type signupData = z.infer<typeof signupSchema.body>;
+export type resetPasswordData = z.infer<typeof resetPasswordSchema.body>;
+export declare const loginSchema: {
+    body: z.ZodObject<{
+        password: z.ZodString;
+        identifier: z.ZodString;
+    }, z.core.$strict>;
+};
+export type loginData = z.infer<typeof loginSchema.body>;
 //# sourceMappingURL=user.validation.d.ts.map

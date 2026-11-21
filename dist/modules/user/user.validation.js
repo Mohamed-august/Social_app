@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.resetPasswordSchema = exports.signupSchema = void 0;
+exports.loginSchema = exports.resetPasswordSchema = exports.signupSchema = void 0;
 const zod_1 = require("zod");
 const user_types_1 = require("./user.types");
 exports.signupSchema = {
@@ -28,6 +28,12 @@ exports.resetPasswordSchema = {
     }).refine((arg) => arg.password == arg.confirmPassword, {
         error: "password mismatch",
         path: ["password", "confirmPassword"]
+    })
+};
+exports.loginSchema = {
+    body: zod_1.z.strictObject({
+        password: zod_1.z.string(),
+        identifier: zod_1.z.string()
     })
 };
 //# sourceMappingURL=user.validation.js.map

@@ -1,3 +1,4 @@
+import { HydratedDocument } from "mongoose";
 export declare enum GenderEnum {
     male = 0,
     female = 1
@@ -27,4 +28,5 @@ export interface IUser {
     blockedAt: Date;
     fullname: string;
 }
+export type HUser = HydratedDocument<IUser>;
 //# sourceMappingURL=user.types.d.ts.map

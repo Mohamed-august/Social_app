@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BadrequestResponse = exports.NotFoundException = exports.AppError = void 0;
+exports.UnAuthorizedException = exports.BadrequestException = exports.NotFoundException = exports.AppError = void 0;
 class AppError extends Error {
     statusCode;
     constructor(msg, statusCode = 500) {
@@ -15,10 +15,16 @@ class NotFoundException extends AppError {
     }
 }
 exports.NotFoundException = NotFoundException;
-class BadrequestResponse extends AppError {
+class BadrequestException extends AppError {
     constructor(msg = "bad request") {
-        super("bas request", 400);
+        super("bad request", 400);
     }
 }
-exports.BadrequestResponse = BadrequestResponse;
+exports.BadrequestException = BadrequestException;
+class UnAuthorizedException extends AppError {
+    constructor(msg = "unAuthorized") {
+        super("unAuthorized", 401);
+    }
+}
+exports.UnAuthorizedException = UnAuthorizedException;
 //# sourceMappingURL=error.handle.js.map
